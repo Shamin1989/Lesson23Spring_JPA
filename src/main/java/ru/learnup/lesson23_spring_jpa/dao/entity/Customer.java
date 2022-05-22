@@ -1,4 +1,4 @@
-package ru.learnup.lesson22_spring_jpa.dao.entity;
+package ru.learnup.lesson23_spring_jpa.dao.entity;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -9,32 +9,33 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Table(name = "author")
+@Table(name = "customer")
 @Getter
 @Setter
 @RequiredArgsConstructor
-public class Author {
-
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column
     private String name;
-
-    @OneToMany(mappedBy = "author",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @Column
+    private LocalDate birthDate;
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @Fetch(FetchMode.JOIN)
-    private List <Book> books;
+    private List<Order> orders;
 
     @Override
     public String toString() {
-        return "Author{" +
+        return "Customer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", birthDate=" + birthDate +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package ru.learnup.lesson22_spring_jpa.dao.entity;
+package ru.learnup.lesson23_spring_jpa.dao.entity;
 
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package ru.learnup.lesson22_spring_jpa;
+package ru.learnup.lesson23_spring_jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
